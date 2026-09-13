@@ -5,3 +5,18 @@ const mc=document.querySelector('.mobile-call'); if(mc){const t=()=>mc.classList
 document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const b=f.querySelector('button'); if(b){const old=b.textContent;b.textContent='REQUEST RECEIVED';setTimeout(()=>b.textContent=old,2200)}}));
 
 const bs=document.getElementById('blogSearch'),bt=document.getElementById('blogTopic'),bg=document.getElementById('blogGrid'),be=document.getElementById('emptyPosts');function filterBlog(){if(!bg)return;const q=(bs?.value||'').toLowerCase().trim(),topic=bt?.value||'all';let shown=0;bg.querySelectorAll('.post').forEach(p=>{const okText=!q||p.innerText.toLowerCase().includes(q),okTopic=topic==='all'||(p.dataset.topic||'').split(' ').includes(topic),ok=okText&&okTopic;p.style.display=ok?'flex':'none';if(ok)shown++});if(be)be.style.display=shown?'none':'block'};bs?.addEventListener('input',filterBlog);bt?.addEventListener('change',filterBlog);
+
+// Mobile navigation polish
+if(nav&&ham){
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    ham.setAttribute('aria-expanded','false');
+  }));
+  addEventListener('resize',()=>{
+    if(innerWidth>980){
+      nav.classList.remove('open');
+      ham.setAttribute('aria-expanded','false');
+      document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+    }
+  },{passive:true});
+}
