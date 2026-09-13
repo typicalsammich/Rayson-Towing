@@ -11,3 +11,10 @@
 
 /* city links + scrolling review wall */
 .areas a.pill{display:inline-flex;align-items:center}.review-marquee{overflow:hidden;position:relative;margin-top:28px;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}.review-track{display:flex;gap:16px;width:max-content;animation:reviewScroll 65s linear infinite;padding:6px 0 12px}.review-marquee:hover .review-track{animation-play-state:paused}.review-track .reviewcard{width:340px;min-height:210px;flex:0 0 340px}.review-track .reviewcard small{color:#858581}.review-note{color:#999;line-height:1.65;font-size:12px;max-width:900px;margin:18px 0 0}@keyframes reviewScroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 8px))}}@media(max-width:650px){.review-track .reviewcard{width:290px;flex-basis:290px}.review-track{animation-duration:52s}}
+
+/* Full social footer links */
+.socials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.socialbtn{min-height:38px;white-space:nowrap}
+.social-instagram:hover{border-color:#ff6a00!important;color:#ff6a00!important}
+.social-facebook:hover,.social-x:hover,.social-pinterest:hover,.social-youtube:hover,.social-linkedin:hover{border-color:var(--gold)!important;color:var(--gold)!important}
+@media(max-width:700px){.socials{grid-template-columns:repeat(2,minmax(0,1fr))}}
