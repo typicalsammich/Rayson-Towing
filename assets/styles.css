@@ -123,3 +123,43 @@
   .pill{flex-basis:100%}
   .socials{grid-template-columns:1fr}
 }
+
+
+/* Mobile hamburger visibility fix */
+@media (max-width: 900px) {
+  .menu-toggle,
+  .mobile-menu-toggle,
+  .hamburger,
+  .nav-toggle {
+    position: relative;
+  }
+
+  .menu-toggle span,
+  .mobile-menu-toggle span,
+  .hamburger span,
+  .nav-toggle span {
+    display: block !important;
+    width: 26px !important;
+    height: 2px !important;
+    margin: 5px auto !important;
+    background: #f47a18 !important;
+    border-radius: 2px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none;
+  }
+
+  /* Fallback for toggle buttons that do not contain span elements */
+  .menu-toggle:empty::before,
+  .mobile-menu-toggle:empty::before,
+  .hamburger:empty::before,
+  .nav-toggle:empty::before {
+    content: "☰";
+    display: block;
+    color: #f47a18;
+    font-size: 30px;
+    line-height: 1;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+  }
+}
